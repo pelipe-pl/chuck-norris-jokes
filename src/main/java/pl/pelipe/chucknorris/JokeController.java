@@ -14,10 +14,21 @@ public class JokeController {
         this.jokeService = jokeService;
     }
 
+//    @GetMapping("/")
+//    public String displayJoke(Model model) {
+//        String joke = jokeService.getJoke();
+//        model.addAttribute("joke", joke);
+//        return "index";
+//    }
+
     @GetMapping("/")
-    public String displayJoke(Model model) {
-        String joke = jokeService.getJoke();
-        model.addAttribute("joke", joke);
-        return "jokepage";
+    public String displayIndex() {
+        return "index";
+    }
+
+    @GetMapping("/getjoke")
+    public String getJoke(Model model) {
+        model.addAttribute("joke", jokeService.getJoke());
+        return "joke";
     }
 }

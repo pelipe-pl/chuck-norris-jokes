@@ -8,7 +8,7 @@ public class JokeService {
 
     private ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
 
-    public String getJoke() {
+    String getJoke() {
         return chuckNorrisQuotes.getRandomQuote();
     }
 }

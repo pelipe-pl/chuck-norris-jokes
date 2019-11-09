@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuck Norris Joke</title>
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#joke-button").click(function () {
+                $("#joke-text").load("/getjoke");
+            })
+        });
+
+        $(document).ready(function () {
+            $("#joke-text").load("/getjoke");
+        });
+
+    </script>
+    <style>
+        body {
+            background: darkslateblue;
+        }
+
+        #joke-text {
+            text-decoration-color: azure;
+            font-family: 'McLaren', cursive;
+            font-size: x-large;
+            text-align: center;
+            color: azure;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+
+        .chuck-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+
+        #joke-button {
+            font-family: 'McLaren', monospace;
+            font-size: large;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<img class="chuck-img" src=img/chuck.png alt="Chuck Norris photo">
+<div id="joke-text"></div>
+<button id="joke-button">Next joke</button>
+</body>
+</html>
