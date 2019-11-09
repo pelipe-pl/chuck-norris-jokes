@@ -2,25 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chuck Norris Joke</title>
+    <title>Chuck Norris Jokes</title>
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
 
         $(document).ready(function () {
-            $("#joke-button").click(function () {
-                $("#joke-text").load("/getjoke");
-            })
+            $("#joke-text").load("/getjoke");
         });
 
         $(document).ready(function () {
-            $("#joke-text").load("/getjoke");
-        });
+            $("#joke-button").click(function () {
+                $("#joke-text").load("/getjoke");
+                var images = [];
+                images[0] = 'img/chuck01.png';
+                images[1] = 'img/chuck02.png';
+                images[2] = 'img/chuck03.png';
+                images[3] = 'img/chuck04.png';
+                images[4] = 'img/chuck05.png';
+                images[5] = 'img/chuck06.png';
+                var randomNumber = Math.floor(Math.random() * images.length);
+                $("#chuck-img").attr("src", images[randomNumber]);
+            })
+        })
 
     </script>
     <style>
         body {
             background: darkslateblue;
+        }
+
+        #joke-title{
+            color: indianred;
+            font-family: 'McLaren', cursive;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        #chuck-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
         }
 
         #joke-text {
@@ -33,13 +56,6 @@
             margin-right: 35%;
         }
 
-        .chuck-img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 200px;
-        }
-
         #joke-button {
             font-family: 'McLaren', monospace;
             font-size: large;
@@ -50,7 +66,8 @@
     </style>
 </head>
 <body>
-<img class="chuck-img" src=img/chuck.png alt="Chuck Norris photo">
+<h1 id="joke-title">Chuck Norris Jokes</h1>
+<img id="chuck-img" src=img/chuck01.png alt="Chuck Norris photo">
 <div id="joke-text"></div>
 <button id="joke-button">Next joke</button>
 </body>
