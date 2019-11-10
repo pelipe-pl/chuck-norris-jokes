@@ -1,0 +1,35 @@
+body {
+    background: darkslateblue;
+}
+
+#joke-title{
+    color: indianred;
+    font-family: 'McLaren', cursive;
+    font-size: x-large;
+    text-align: center;
+}
+
+#chuck-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+}
+
+#joke-text {
+    text-decoration-color: azure;
+    font-family: 'McLaren', cursive;
+    font-size: x-large;
+    text-align: center;
+    color: azure;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+#joke-button {
+    font-family: 'McLaren', monospace;
+    font-size: large;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
