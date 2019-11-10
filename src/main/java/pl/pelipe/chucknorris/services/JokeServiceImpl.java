@@ -1,14 +1,14 @@
-package pl.pelipe.chucknorris;
+package pl.pelipe.chucknorris.services;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JokeService {
+public class JokeServiceImpl implements JokeService {
 
     private ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
 
-    String getJoke() {
+    public String getJoke() {
         return chuckNorrisQuotes.getRandomQuote();
     }
 }

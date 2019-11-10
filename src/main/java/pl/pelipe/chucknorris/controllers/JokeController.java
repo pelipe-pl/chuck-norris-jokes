@@ -1,8 +1,9 @@
-package pl.pelipe.chucknorris;
+package pl.pelipe.chucknorris.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import pl.pelipe.chucknorris.services.JokeService;
 
 @Controller
 
@@ -13,13 +14,6 @@ public class JokeController {
     public JokeController(JokeService jokeService) {
         this.jokeService = jokeService;
     }
-
-//    @GetMapping("/")
-//    public String displayJoke(Model model) {
-//        String joke = jokeService.getJoke();
-//        model.addAttribute("joke", joke);
-//        return "index";
-//    }
 
     @GetMapping("/")
     public String displayIndex() {
