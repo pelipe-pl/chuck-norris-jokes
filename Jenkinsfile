@@ -6,6 +6,13 @@ node {
         checkout scm
     }
 
+    stage('Build application') {
+
+        app.inside {
+            sh './mvnw package && java -jar target/app.jar'
+        }
+    }
+
     stage('Build image') {
 
         app = docker.build("pelipe/chuck-norris-jokes")
