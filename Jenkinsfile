@@ -9,6 +9,7 @@ node {
     stage('Build application') {
 
         app.inside {
+            sh 'cd chuck-norris-jokes'
             sh 'mvn package'
         }
     }
