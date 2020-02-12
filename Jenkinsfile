@@ -9,7 +9,7 @@ node {
     stage('Build application') {
 
         app.inside {
-            sh './mvnw package && java -jar target/app.jar'
+            sh 'mvn package'
         }
     }
 
