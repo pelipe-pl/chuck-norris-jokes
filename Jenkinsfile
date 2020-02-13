@@ -1,5 +1,8 @@
 node {
     def app
+    tools{
+        maven 'Maven 3.6.3'
+        jdk 'jdk8'
 
     stage('Clone repository') {
 
