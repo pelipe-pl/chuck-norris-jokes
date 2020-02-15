@@ -8,14 +8,18 @@ pipeline {
   }
   stages {
     stage('Build image') {
-      step('Build image') {
-        app = docker.build("pelipe/chuck-norris-jokes")
+      steps{
+        step('Build image') {
+          app = docker.build("pelipe/chuck-norris-jokes")
+        }
       }
     }
     stage('Push image') {
-      step('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("latest")
+      steps{
+        step('Push image') {
+          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+              app.push("latest")
+          }
         }
       }
     }
