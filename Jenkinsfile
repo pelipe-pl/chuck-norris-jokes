@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
   agent {
     node {
       def app
@@ -28,4 +28,5 @@ pipeline{
             app.push("latest")
         }
     }
+  }
 }
