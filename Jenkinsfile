@@ -21,6 +21,10 @@ pipeline {
                 }
             }
         }
+        stage('Initialize'){
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
         stage('Docker Build') {
             steps {
                 sh 'docker build -t pelipe/chuck-norris-jokes .'
@@ -32,7 +36,6 @@ pipeline {
               withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
                       sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
                       sh 'docker push pelipe/chuck-norris-jokes:latest'
-
                 }
             }
         }
