@@ -1,4 +1,9 @@
 pipeline {
+    environment{
+        registry = "pelipe/chuck-norris-jokes"
+        registryCredential = 'dockerhub'
+        dockerImage = ''
+    }
     agent {
         docker {
             image 'maven:3-alpine'
@@ -21,15 +26,12 @@ pipeline {
                 }
             }
         }
-        stage('Initialize'){
-             steps{
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-                }
-            }
+
         stage('Docker Build') {
             steps {
-                sh 'docker build -t pelipe/chuck-norris-jokes .'
+                script{
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
         stage('Docker Push') {
