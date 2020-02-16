@@ -1,27 +1,30 @@
 pipeline {
-  agent {
-    node {
-      def app
-      label 'chuck-norris'
-      customWorkspace '/var/lib/jenkins/workspace/chuck-norris'
-    }
-  }
-  stages {
-    stage('Build image') {
-      steps{
-        step('Build image') {
-          app = docker.build("pelipe/chuck-norris-jokes")
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
         }
-      }
     }
-    stage('Push image') {
-      steps{
-        step('Push image') {
-          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-              app.push("latest")
-          }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
         }
-      }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     }
-  }
 }
