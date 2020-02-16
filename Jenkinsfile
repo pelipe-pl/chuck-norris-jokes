@@ -21,7 +21,7 @@ pipeline {
                 }
             }
         }
-        stage('Dokcer Build') {
+        stage('Docker Build') {
             steps {
                 sh 'docker build -t pelipe/chuck-norris-jokes .'
             }
