@@ -3,4 +3,4 @@ This app displays random Chuck Norris joke within the random photo.
 
 Live version:
 
-https://https://chuck-norris.pelipe.pl/
+https://chuck-norris.pelipe.pl/
