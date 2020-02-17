@@ -3,10 +3,11 @@ body {
 }
 
 #joke-title{
-    color: indianred;
     font-family: 'McLaren', cursive;
-    font-size: x-large;
+    font-size: xx-large;
     text-align: center;
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #chuck-img {
