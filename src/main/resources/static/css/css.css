@@ -25,12 +25,20 @@ body {
     color: azure;
     margin-left: 35%;
     margin-right: 35%;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #joke-button {
-    font-family: 'McLaren', monospace;
-    font-size: large;
+    background-color: #4CAF50;
+    border: none;
+    padding: 15px 32px;
     display: block;
+    text-align: center;
+    font-family: 'McLaren', monospace;
+    font-size: x-large;
+    text-decoration-color: aliceblue;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #000000;
 }

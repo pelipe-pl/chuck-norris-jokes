@@ -6,28 +6,7 @@
     <link href="css/css.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script>
-
-        $(document).ready(function () {
-            $("#joke-text").load("/getjoke");
-        });
-
-        $(document).ready(function () {
-            $("#joke-button").click(function () {
-                $("#joke-text").load("/getjoke");
-                var images = [];
-                images[0] = 'img/chuck01.png';
-                images[1] = 'img/chuck02.png';
-                images[2] = 'img/chuck03.png';
-                images[3] = 'img/chuck04.png';
-                images[4] = 'img/chuck05.png';
-                images[5] = 'img/chuck06.png';
-                var randomNumber = Math.floor(Math.random() * images.length);
-                $("#chuck-img").attr("src", images[randomNumber]);
-            })
-        })
-
-    </script>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
 <h1 id="joke-title">Chuck Norris Jokes</h1>
