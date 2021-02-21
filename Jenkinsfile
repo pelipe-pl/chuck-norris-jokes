@@ -9,6 +9,7 @@ pipeline {
             image 'maven:3-alpine'
 //             args '-v /root/.m2:/root/.m2'
             args '-u root'
+
         }
     }
     stages {
@@ -31,6 +32,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script{
+                    run sudo apt-get install docker.io
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
