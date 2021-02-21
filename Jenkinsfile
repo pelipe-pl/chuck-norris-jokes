@@ -4,7 +4,7 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent
+    agent any
 
     {
         docker {
