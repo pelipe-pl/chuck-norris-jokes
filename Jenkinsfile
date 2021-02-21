@@ -4,16 +4,14 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent any
+    agent
 
-//     {
-//         docker {
-//             image 'maven:3-alpine'
-// //             args '-v /root/.m2:/root/.m2'
-//             args '-u root'
-//
-//         }
-//     }
+    {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2 -u root'
+        }
+    }
     stages {
         stage('Build') {
             steps {
