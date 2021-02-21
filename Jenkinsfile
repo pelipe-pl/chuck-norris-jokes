@@ -13,7 +13,7 @@ pipeline {
 //             args '-u root'
 //
 //         }
-    }
+//     }
     stages {
         stage('Build') {
             steps {
