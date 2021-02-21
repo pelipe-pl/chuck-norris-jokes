@@ -32,7 +32,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script{
-                    sh 'sudo apt-get install docker.io'
+                    sh 'apt-get install docker.io'
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
