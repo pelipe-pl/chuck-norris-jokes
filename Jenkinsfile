@@ -4,8 +4,7 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent any
-
+    agent
     {
         docker {
             image 'maven:3-alpine'
